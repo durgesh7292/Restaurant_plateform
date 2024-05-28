@@ -29,7 +29,7 @@ const Reservation = () => {
           withCredentials: true,
         }
       );
-      console.log(date);
+
       toast.success(data.message);
       setFirstName("");
       setLastName("");
