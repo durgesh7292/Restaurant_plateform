@@ -13,14 +13,13 @@ const Reservation = () => {
   const [time, setTime] = useState("");
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
   const handleReservation = async (e) => {
     e.preventDefault();
 
     try {
       const { data } = await axios.post(
-        `${API_BASE_URL}/api/v1/reservation/send`,
+        `/api/v1/reservation/send`,
         { firstName, LastName, email, phone, date, time },
         {
           headers: {
