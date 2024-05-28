@@ -14,12 +14,13 @@ const Reservation = () => {
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
   const handleReservation = async (e) => {
     e.preventDefault();
 
     try {
       const { data } = await axios.post(
-        `/api/v1/reservation/send`,
+        `${API_BASE_URL}v1/reservation/send`,
         { firstName, LastName, email, phone, date, time },
         {
           headers: {
@@ -28,6 +29,7 @@ const Reservation = () => {
           withCredentials: true,
         }
       );
+      console.log(date);
       toast.success(data.message);
       setFirstName("");
       setLastName("");
