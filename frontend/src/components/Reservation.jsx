@@ -20,7 +20,7 @@ const Reservation = () => {
 
     try {
       const { data } = await axios.post(
-        `${API_BASE_URL}v1/reservation/send`,
+        `${API_BASE_URL}/v1/reservation/send`,
         { firstName, LastName, email, phone, date, time },
         {
           headers: {
